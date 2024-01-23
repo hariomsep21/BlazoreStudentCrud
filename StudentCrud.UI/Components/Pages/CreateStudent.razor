@@ -1,0 +1,55 @@
+﻿@page "/addstudentrecord"
+@using StudentCrud.Models.Model
+@inject StudentCrud.Services.Service.StudentService _createService
+@inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
+
+<h3>Add Student</h3>
+<hr />
+
+<form>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="FullName" class="control-label">Full Name</label>
+                <input id="FullName" class="form-control" @bind="@obj.FullName"/>
+            </div>
+            <div class="form-group">
+                <label for="UserName" class="control-label">User Name</label>
+                <input id="UserName" class="form-control" @bind="@obj.UserName"  />
+            </div>
+            <div class="form-group">
+                <label for="UserEmail" class="control-label">User Email</label>
+                <input id="UserEmail" class="form-control" @bind="@obj.UserEmail"  />
+            </div>
+            <div class="form-group">
+                <label for="Phone" class="control-label">Phone</label>
+                <input id="Phone" class="form-control" @bind="@obj.Phone"  />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" @onclick="@CreateNewStudent">Save</button>
+        <button type="button" class="btn btn-secondary" @onclick="@Cancel">Cancel</button>
+    </div>
+</form>
+
+@code
+{
+
+    StudentCrud.Models.Model.StudentModel obj = new StudentModel();
+
+    protected async Task CreateNewStudent()
+    {
+        Console.WriteLine("CreateNewStudent method called."); // Add this line for debugging
+        await _createService.Create(obj);
+        NavigationManager.NavigateTo("studentrecord");
+    }
+
+
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("studentrecord");
+    }
+}
