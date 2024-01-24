@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentCrud.UI", "StudentCrud.UI.csproj", "{91B91346-5BA6-486B-8245-6D5B075F880D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentCrud.UI", "StudentCrud.UI.csproj", "{91B91346-5BA6-486B-8245-6D5B075F880D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentCrud.Models", "..\StudentCrud.Models\StudentCrud.Models.csproj", "{F71476DC-FE03-4F31-B64D-3E0B6AB5F538}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentCrud.Models", "..\StudentCrud.Models\StudentCrud.Models.csproj", "{F71476DC-FE03-4F31-B64D-3E0B6AB5F538}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentCrud.Services", "..\StudentCrud.Services\StudentCrud.Services.csproj", "{172EB7D3-D86F-4422-A571-512FC1D366C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentCrud.Services", "..\StudentCrud.Services\StudentCrud.Services.csproj", "{172EB7D3-D86F-4422-A571-512FC1D366C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -61,7 +61,8 @@ namespace StudentCrud.Services.Service
                 try
                 {
                     // Send an HTTP DELETE request to the specified API endpoint with the provided id in the URL.
-                    HttpResponseMessage response = await _httpClient.DeleteAsync($"{_deleteUrl}/Delete?Id={id}");
+                    HttpResponseMessage response = await _httpClient.DeleteAsync($"{_deleteUrl}/Delete?Id={id}"); 
+
 
                     // Check if the response indicates a failure (non-success status code)
                     if (!response.IsSuccessStatusCode)
@@ -165,22 +166,13 @@ namespace StudentCrud.Services.Service
             }
         }
 
-        public async Task<StudentModel> Update(int id, StudentModel student)
+        public async Task<StudentModel> Update(StudentModel student)
         {
            
                 try
                 {
-                    // Commented out token retrieval and usage (JWT authentication)
-                    // string token = _httpContextAccessor.HttpContext.Request.Cookies["Token"];
-                    // if (string.IsNullOrEmpty(token))
-                    // {
-                    //     throw new Exception("Token not found or invalid.");
-                    // }
-                    // _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-                    // Send an HTTP PUT request to the specified API endpoint with the provided id in the URL
-                    // and the updatedStateDto as JSON in the request body.
-                    HttpResponseMessage response = await _httpClient.PutAsJsonAsync($"{_updateUrl}/{id}", student);
+                   
+                    HttpResponseMessage response = await _httpClient.PutAsJsonAsync($"{_updateUrl}", student);
 
                     // Ensure that the HTTP request was successful (status code 2xx).
                     response.EnsureSuccessStatusCode();
