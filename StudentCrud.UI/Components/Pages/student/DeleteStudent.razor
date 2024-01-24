@@ -1,0 +1,31 @@
+﻿@page "/deletestudent/{studentId:int}"
+@inject StudentCrud.Services.Service.StudentService _studentService
+@inject NavigationManager _navigationManager
+
+<h1>Delete Student</h1>
+
+@if (StudentObj is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div>
+        <dl class="dl-horizontal">
+            <dt>Full Name:</dt>
+            <dd>@StudentObj.FullName</dd>
+
+            <dt>User Name:</dt>
+            <dd>@StudentObj.UserName</dd>
+
+            <dt>User Email:</dt>
+            <dd>@StudentObj.UserEmail</dd>
+
+            <dt>Phone:</dt>
+            <dd>@StudentObj.Phone</dd>
+        </dl>
+
+        <button class="btn btn-danger" @onclick="Delete">Delete</button>
+    </div>
+}
+

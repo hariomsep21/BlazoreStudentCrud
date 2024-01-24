@@ -12,7 +12,7 @@ namespace StudentCrud.Services.Interface
         Task<IEnumerable<StudentModel>> GetStudents();
         Task<StudentModel> GetById(int id);
         Task<StudentModel> Create(StudentModel student);
-        Task<StudentModel> Update(int id, StudentModel student);
+        Task<StudentModel> Update(StudentModel student);
         Task<StudentModel> Delete(int id);
 
 

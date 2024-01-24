@@ -35,21 +35,4 @@
     </div>
 </form>
 
-@code
-{
 
-    StudentCrud.Models.Model.StudentModel obj = new StudentModel();
-
-    protected async Task CreateNewStudent()
-    {
-        Console.WriteLine("CreateNewStudent method called."); // Add this line for debugging
-        await _createService.Create(obj);
-        NavigationManager.NavigateTo("studentrecord");
-    }
-
-
-    void Cancel()
-    {
-        NavigationManager.NavigateTo("studentrecord");
-    }
-}
